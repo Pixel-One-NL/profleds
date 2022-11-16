@@ -2,9 +2,9 @@
   /**
    * Title component
    * 
-   * Renders H tags with dynamic size and color
+   * Renders H tags with dynamic size and classes
    * 
-   * Expected arguments: size, text
+   * Expected arguments: size, text, class
    * 
    * @package PixelOne
    * @since 1.0.0
