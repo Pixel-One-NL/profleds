@@ -1,0 +1,19 @@
+/*
+TailwindCSS helpers
+This is used when classes arent placed in the markup but are used in arrays or functions
+
+The format is as follows:
+.tw-[class name] {
+  @apply [tailwind class name];
+}
+
+Example:
+You have a title that needs .text-2xl and .text-center
+You would add the following to this file
+.tw-text-2xl {
+  @apply text-2xl;
+}
+.tw-text-center {
+  @apply text-center;
+}
+*/
