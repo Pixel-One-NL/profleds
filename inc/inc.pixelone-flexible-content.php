@@ -39,7 +39,11 @@
      * @return void
      */
     private function check_acf() {
-      if( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
+      if( function_exists( 'is_plugin_active' )  ) {
+        if( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
+          return false;
+        }
+      } else {
         return false;
       }
 
