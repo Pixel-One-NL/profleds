@@ -1,0 +1,117 @@
+.acf-fields > .acf-field {
+  padding: 20px !important;
+}
+.acf-postbox textarea {
+  padding: 5px !important;
+}
+.acf-flexible-content .layout {
+  margin-bottom: 45px !important;
+  border: 2px solid #000 !important;
+  background: #f1f1f1 !important;
+}
+
+.acf-flexible-content .layout .layout {
+  margin-bottom: 0 !important;
+  border: 2px solid #656565 !important;
+  background: #fff !important;
+}
+
+.acf-flexible-content .layout .layout .acf-fc-layout-handle {
+  background: #656565 !important;
+}
+
+.acf-flexible-content .layout .acf-fc-layout-handle {
+  background-color: #000000 !important;
+  color: #eee !important;
+}
+
+.acf-repeater.-row > table > tbody > tr > td,
+.acf-repeater.-block > table > tbody > tr > td {
+  border-top: 2px solid #202428 !important;
+}
+
+.acf-repeater .acf-row-handle {
+  vertical-align: top !important;
+  padding-top: 16px !important;
+}
+
+.acf-repeater .acf-row-handle span {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: #202428 !important;
+}
+
+.imageUpload img {
+  width: 75px !important;
+}
+
+.acf-repeater .acf-row-handle .acf-icon.-minus {
+  top: 30px !important;
+}
+.acf_postbox {
+  background-color: #0473aa !important;
+  border-radius: 5px !important;
+}
+.acf_postbox input[type='text'],
+.acf_postbox input[type='search'],
+.acf_postbox input[type='radio'],
+.acf_postbox input[type='tel'],
+.acf_postbox input[type='time'],
+.acf_postbox input[type='url'],
+.acf_postbox input[type='week'],
+.acf_postbox input[type='password'],
+.acf_postbox input[type='checkbox'],
+.acf_postbox input[type='color'],
+.acf_postbox input[type='date'],
+.acf_postbox input[type='datetime'],
+.acf_postbox input[type='datetime-local'],
+.acf_postbox input[type='email'],
+.acf_postbox input[type='month'],
+.acf_postbox input[type='number'],
+.acf_postbox select,
+.acf_postbox textarea {
+  border-radius: 5px !important;
+}
+
+.acf_postbox p.label {
+  text-shadow: none !important;
+}
+
+.acf_postbox h2.hndle,
+.acf_postbox p.label label,
+.acf_postbox p.label,
+.acf_postbox .toggle-indicator {
+  color: #ffffff !important;
+}
+
+.ui-acf .ui-datepicker select.ui-datepicker-month,
+.ui-acf .ui-datepicker select.ui-datepicker-year {
+  border-radius: 5px !important;
+}
+
+.ui-acf .ui-state-default {
+  border: 1px solid #ffffff !important;
+  background: none !important;
+}
+
+.ui-acf .ui-datepicker .ui-state-active,
+.ui-acf .ui-state-default:hover {
+  background: #2ea2cc !important;
+  color: #ffffff !important;
+}
+
+.ui-acf .ui-widget-header {
+  background: #3e3e3e !important;
+}
+
+.ui-acf .ui-datepicker .ui-datepicker-buttonpane {
+  background: #0473aa !important;
+  border-top: none !important;
+}
+
+.ui-acf .ui-datepicker .ui-datepicker-buttonpane button {
+  text-shadow: none !important;
+  color: #ffffff !important;
+  text-decoration: underline !important;
+  border: none !important;
+}
