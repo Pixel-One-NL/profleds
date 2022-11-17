@@ -133,41 +133,41 @@
           switch( $validation_type ) {
             case 'string':
               if( ! is_string( $value ) ) {
-                throw new Exception( 'Component data key "' . $key . '" must be a string' );
+                throw new Exception( wp_sprintf( 'Component data key %s must be a string', $key ) );
               }
               break;
             case 'int':
               if( ! is_int( $value ) ) {
-                throw new Exception( 'Component data key "' . $key . '" must be an integer' );
+                throw new Exception( wp_sprintf( 'Component data key %s must be an integer', $key ) );
               }
               break;
             case 'bool':
               if( ! is_bool( $value ) ) {
-                throw new Exception( 'Component data key "' . $key . '" must be a boolean' );
+                throw new Exception( wp_sprintf( 'Component data key %s must be a boolean', $key ) );
               }
               break;
             case 'array':
               if( ! is_array( $value ) ) {
-                throw new Exception( 'Component data key "' . $key . '" must be an array' );
+                throw new Exception( wp_sprintf( 'Component data key %s must be an array', $key ) );
               }
               break;
             case 'object':
               if( ! is_object( $value ) ) {
-                throw new Exception( 'Component data key "' . $key . '" must be an object' );
+                throw new Exception( wp_sprintf( 'Component data key %s must be an object', $key ) );
               }
               break;
             case 'null':
               if( ! is_null( $value ) ) {
-                throw new Exception( 'Component data key "' . $key . '" must be null' );
+                throw new Exception( wp_sprintf( 'Component data key %s must be null', $key ) );
               }
               break;
             case 'enum':
               if( ! in_array( $value, $expected[ $key ]['values'] ) ) {
-                throw new Exception( 'Component data key "' . $key . '" must be one of the following values: ' . implode( ', ', $expected[ $key ]['values'] ) );
+                throw new Exception( wp_sprintf( 'Component data key %s must be one of the following values: %s', $key, implode( ', ', $expected[ $key ]['values'] ) ) );
               }
               break;
             default:
-              throw new Exception( 'Component data key "' . $key . '" must be one of the following types: ' . implode( ', ', $expected_types ) );
+              throw new Exception( wp_sprintf( 'Component data key must be one of the following types: %s', implode( ', ', $expected_types ) ) );
           }
         }
       }
