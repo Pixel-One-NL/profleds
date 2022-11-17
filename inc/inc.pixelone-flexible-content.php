@@ -13,7 +13,7 @@
    class PONE_Render {
     public function __construct() {
       // Check if ACF plugin is enabled
-      add_action( 'init', array( $this, 'acf_notice' ) );
+      add_action( 'admin_init', array( $this, 'acf_notice' ) );
     }
 
     /**
@@ -73,6 +73,8 @@
      * @return void
      */
     static function render() {
+      if( ! (new PONE_Render)->check_acf() ) return false;
+
       if( have_rows( 'flexible_content' ) ) {
         while( have_rows( 'flexible_content' ) ) {
           the_row();
