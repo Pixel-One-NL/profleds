@@ -1,4 +1,6 @@
 <?php
+  defined( 'ABSPATH' ) || die;
+  
   /**
    * Component base, used to help components creation
    * 

@@ -14,3 +14,6 @@
   // Components
   require __DIR__ . '/inc/inc.pixelone-component.php';
 
+  // Assets
+  require __DIR__ . '/inc/inc.assets.php';
+
