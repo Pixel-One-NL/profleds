@@ -102,6 +102,10 @@
       animation: poneSubMenuFadeInUp 200ms ease-in-out;
     }
   }
+
+  li.current-menu-item > a {
+    @apply text-primary font-semibold;
+  }
 }
 
 @keyframes poneSubMenuFadeInUp {
