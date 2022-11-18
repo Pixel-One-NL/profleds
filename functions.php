@@ -17,3 +17,6 @@
   // Assets
   require __DIR__ . '/inc/inc.assets.php';
 
+  // Nav walker
+  require __DIR__ . '/inc/inc.pixelone-nav-walker.php';
+

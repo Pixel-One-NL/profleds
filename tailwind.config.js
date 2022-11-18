@@ -4,7 +4,7 @@ module.exports = {
     files: [
       './*.php',
       './inc/**/*.php',
-      './templates/**/*.php',
+      './template-parts/**/*.php',
       './safelist.txt',
     ],
   },

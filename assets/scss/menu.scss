@@ -1,0 +1,138 @@
+.pone-menu {
+  @apply flex items-center;
+
+  & > li {
+    @apply mr-4 transition-opacity;
+
+    &:last-child {
+      @apply mr-0;
+    }
+
+    & > a:hover {
+      @apply opacity-60;
+    }
+
+    &.menu-item-has-children {
+      @apply relative;
+    }
+
+    & > .pone-sub-menu {
+      @apply absolute left-1/2 transform -translate-x-1/2 py-4 px-6 bg-gray-50 rounded-lg shadow-md mt-2 hidden min-w-[200px];
+
+      &::before {
+        @apply absolute bottom-full left-0 w-full h-2;
+        content: '';
+      }
+
+      & > li {
+        @apply mb-3 pb-3 border-b mr-0 flex justify-between;
+
+        a {
+          @apply transition-opacity;
+        }
+
+        &:hover > a {
+          @apply opacity-60;
+        }
+
+        &:hover > box-icon {
+          @apply opacity-60;
+        }
+
+        &:last-child {
+          @apply mb-0 pb-0 border-b-0;
+        }
+
+        & > a {
+          @apply flex-1;
+        }
+
+        &.menu-item-has-children {
+          @apply relative;
+
+          & > .pone-sub-menu.sub-menu-left {
+            @apply absolute right-full py-4 px-6 bg-gray-50 rounded-lg shadow-md hidden min-w-[200px] -top-4 mr-6;
+            animation: poneSubMenuFadeInLeft 200ms ease-in-out;
+
+            &::after {
+              content: '';
+              @apply absolute h-full w-6  left-full top-0;
+            }
+          }
+
+          & > .pone-sub-menu.sub-menu-right {
+            @apply absolute left-full py-4 px-6 bg-gray-50 rounded-lg shadow-md hidden min-w-[200px] -top-4 ml-6;
+            animation: poneSubMenuFadeInRight 200ms ease-in-out;
+
+            &::before {
+              content: '';
+              @apply absolute h-full w-6  right-full top-0;
+            }
+          }
+
+          &:hover {
+            .pone-sub-menu {
+              @apply block;
+            }
+          }
+
+          & > .pone-sub-menu {
+            & > li {
+              @apply flex content-between items-center mb-3 pb-3 border-b mr-0;
+
+              &:last-child {
+                @apply mb-0 pb-0 border-b-0;
+              }
+
+              a {
+                @apply transition-opacity flex-1;
+
+                &:hover {
+                  @apply opacity-60;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:hover > .pone-sub-menu {
+      @apply block;
+      animation: poneSubMenuFadeInUp 200ms ease-in-out;
+    }
+  }
+}
+
+@keyframes poneSubMenuFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes poneSubMenuFadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes poneSubMenuFadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate(-10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
