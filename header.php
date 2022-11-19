@@ -40,4 +40,18 @@
     <body <?php body_class(); ?>>
         <?php wp_body_open(); ?>
 
+        <?php if( WP_ENV === 'development' ): ?>
+            <div class="py-1 bg-red-500 text-white">
+                <div class="container flex justify-between">
+                    <div>
+                        <i class="fa-solid fa-bell w-4 h-4 bg-red-700 box-content p-1 rounded-sm text-white mr-2"></i> <?php echo wp_sprintf( __( 'Development environment (Theme version: %l)', 'pixelone' ), wp_get_theme()->get( 'Version' ) ); ?>
+                    </div>
+
+                    <div>
+                        <a href="<?php echo esc_url( wp_login_url() ); ?>" class="text-white underline"><?php echo __( 'WP Admin', 'pixelone' ); ?></a>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
         <?php get_template_part( 'template-parts/partials/header', 'header' ); ?>
