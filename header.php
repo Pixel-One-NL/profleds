@@ -40,7 +40,7 @@
     <body <?php body_class(); ?>>
         <?php wp_body_open(); ?>
 
-        <?php if( WP_ENV === 'development' ): ?>
+        <?php if( WP_ENV === 'development' && ! is_user_logged_in() ): ?>
             <div class="py-1 bg-red-500 text-white">
                 <div class="container flex justify-between">
                     <div>
