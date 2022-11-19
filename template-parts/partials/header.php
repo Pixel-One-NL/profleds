@@ -45,7 +45,7 @@
       </div>
 
       <!-- Mobile Menu -->
-      <div class="lg:hidden" x-data="{open: false}">
+      <div class="lg:hidden" x-data="{open: true}">
         <button class="pone-menu-toggle" x-on:click="open = !open" x-bind:aria-expanded="open" x-bind:aria-label="open ? 'Close Menu' : 'Open Menu'" x-bind:class="open ? 'open' : ''">
           <span class="block w-6 h-1 bg-gray-900 rounded transition-all"></span>
           <span class="block w-6 h-1 bg-gray-900 rounded transition-all mt-1"></span>
@@ -54,6 +54,18 @@
 
         <div class="mobile-menu-background-overlay fixed top-0 left-0 w-screen h-screen bg-black opacity-50 z-40" x-show="open"></div>
         <div class="overflow-y-auto mobile-menu fixed bg-white w-full h-full top-0 right-0 max-w-3xl z-50" role="navigation" x-show="open" x-on:click.away="open = false" x-bind:aria-expanded="open" x-bind:aria-label="open ? 'Close Menu' : 'Open Menu'" x-bind:class="open ? 'open' : ''">
+          <div class="mt-8 px-14 flex justify-between">
+            <div></div>
+
+            <div>
+              <button class="pone-menu-toggle" x-on:click="open = !open" x-bind:aria-expanded="open" x-bind:aria-label="open ? 'Close Menu' : 'Open Menu'" x-bind:class="open ? 'open' : ''">
+                <span class="block w-6 h-1 bg-gray-900 rounded transition-all"></span>
+                <span class="block w-6 h-1 bg-gray-900 rounded transition-all mt-1"></span>
+                <span class="block w-6 h-1 bg-gray-900 rounded transition-all mt-1"></span>
+              </button>
+            </div>
+          </div>
+
           <?php if( has_nav_menu( 'primary' ) ) : ?>
             <nav role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'pixelone' ); ?>" class="py-12 px-14">
               <?php
