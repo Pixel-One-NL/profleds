@@ -164,7 +164,7 @@
           animation: 200ms ease-in-out poneSubMenuFadeInLeft;
 
           &.open {
-            @apply block;
+            @apply block pt-2;
           }
 
           & > li {
@@ -183,7 +183,7 @@
               animation: 200ms ease-in-out poneSubMenuFadeInLeft;
 
               &.open {
-                @apply block;
+                @apply block pt-2;
               }
 
               & > li {
