@@ -1,5 +1,5 @@
 Arguments: 
-  /opt/homebrew/Cellar/node/19.0.1/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js add @fortawesome/fontawesome-free
+  /opt/homebrew/Cellar/node/19.0.1/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js add adlpinejs
 
 PATH: 
   /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin
@@ -14,7 +14,7 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://npm.fontawesome.com/@fortawesome%2ffontawesome-free: authentication required
+  Error: https://registry.yarnpkg.com/adlpinejs: Not found
       at params.callback [as _callback] (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:66145:18)
       at self.callback (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
       at Request.emit (node:events:513:28)
