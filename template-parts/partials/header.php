@@ -10,6 +10,9 @@
    */
 ?>
 
+<!-- Toaster -->
+<?php get_template_part( 'template-parts/partials/toaster', 'toaster' ); ?>
+
 <div class="py-6 shadow-md">
   <div class="container">
     <div class="flex justify-between items-center">

@@ -27,3 +27,17 @@
       'primary' => __( 'Primary Menu', 'pixelone' ),
     ) );
   }
+
+  // ACF options page
+  add_action( 'acf/init', 'pone_acf_options_page' );
+  function pone_acf_options_page() {
+    if( function_exists( 'acf_add_options_page' ) ) {
+      acf_add_options_page( array(
+        'page_title'  => __( 'Theme Options', 'pixelone' ),
+        'menu_title'  => __( 'Theme Options', 'pixelone' ),
+        'menu_slug'   => 'theme-options',
+        'capability'  => 'edit_posts',
+        'redirect'    => false
+      ) );
+    }
+  }
