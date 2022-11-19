@@ -1,4 +1,7 @@
 import Alpine from 'alpinejs';
+
+import './console-message';
+
 import '../css/tailwind.css';
 import '../scss/menu.scss';
 
