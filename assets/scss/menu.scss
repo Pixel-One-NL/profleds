@@ -115,6 +115,28 @@
   }
 }
 
+.pone-menu-toggle.open {
+  span:nth-child(1) {
+    @apply transform rotate-45 translate-y-1;
+  }
+
+  span:nth-child(2) {
+    @apply hidden;
+  }
+
+  span:nth-child(3) {
+    @apply transform -rotate-45 -translate-y-1;
+  }
+}
+
+.mobile-menu-background-overlay {
+  animation: 200ms ease-in-out backgroundOverlayFadeIn;
+}
+
+.mobile-menu {
+  animation: 330ms ease-in-out slideInRight;
+}
+
 @keyframes poneSubMenuFadeInUp {
   0% {
     opacity: 0;
@@ -145,5 +167,23 @@
   100% {
     opacity: 1;
     transform: translate(0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes backgroundOverlayFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
   }
 }
