@@ -106,13 +106,6 @@
       animation: poneSubMenuFadeInUp 200ms ease-in-out;
     }
   }
-
-  li.current-menu-item > a,
-  li.current-menu-ancestor > a,
-  li.current-menu-item > i,
-  li.current-menu-ancestor > i {
-    @apply text-primary font-semibold;
-  }
 }
 
 .pone-menu-toggle.open {
@@ -202,6 +195,16 @@
         }
       }
     }
+  }
+}
+
+.pone-menu,
+.pone-mobile-menu {
+  li.current-menu-item > a,
+  li.current-menu-ancestor > a,
+  li.current-menu-item > i,
+  li.current-menu-ancestor > i {
+    @apply text-primary font-semibold;
   }
 }
 
