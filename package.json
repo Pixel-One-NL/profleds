@@ -16,7 +16,6 @@
     "vite-plugin-live-reload": "^3.0.1"
   },
   "dependencies": {
-    "boxicons": "^2.1.4",
     "sass": "^1.56.1"
   }
 }

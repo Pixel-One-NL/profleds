@@ -32,8 +32,12 @@
      */
     public function end_el( &$output, $item, $depth = 0, $args = array() ) {
       // If the item has children, add <box-icon name='chevron-right' ></box-icon>
+      if( in_array( 'menu-item-has-children', $item->classes ) && $depth == 0 ) {
+        $output .= '<i class="fa-solid fa-chevron-down"></i>';
+      }
+
       if( in_array( 'menu-item-has-children', $item->classes ) && $depth > 0 ) {
-        $output .= '<box-icon name="chevron-right" ></box-icon>';
+        $output .= '<i class="fa-solid fa-chevron-right"></i>';
       }
 
       $output .= "</li>";

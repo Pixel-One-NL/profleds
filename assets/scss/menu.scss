@@ -4,6 +4,10 @@
   & > li {
     @apply mr-4 transition-opacity;
 
+    & > i {
+      @apply ml-1.5;
+    }
+
     &:last-child {
       @apply mr-0;
     }
@@ -25,7 +29,7 @@
       }
 
       & > li {
-        @apply mb-3 pb-3 border-b mr-0 flex justify-between;
+        @apply mb-3 pb-3 border-b mr-0 flex justify-between items-center;
 
         a {
           @apply transition-opacity;
@@ -103,7 +107,10 @@
     }
   }
 
-  li.current-menu-item > a {
+  li.current-menu-item > a,
+  li.current-menu-ancestor > a,
+  li.current-menu-item > i,
+  li.current-menu-ancestor > i {
     @apply text-primary font-semibold;
   }
 }
