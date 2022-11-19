@@ -9,7 +9,7 @@
    * @version 1.0.0
    */
 
-   class Pone_Walker_Nav_Menu extends Walker_Nav_Menu {
+   class Pone_Nav_Walker extends Walker_Nav_Menu {
     /**
      * @see Walker::start_lvl()
      * @since 3.0.0

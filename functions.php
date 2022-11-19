@@ -19,4 +19,5 @@
 
   // Nav walker
   require __DIR__ . '/inc/inc.pixelone-nav-walker.php';
+  require __DIR__ . '/inc/inc.pixelone-mobile-nav-walker.php';
 

@@ -135,6 +135,74 @@
 
 .mobile-menu {
   animation: 330ms ease-in-out slideInRight;
+
+  .pone-mobile-menu {
+    @apply flex flex-col justify-start;
+
+    & > li {
+      @apply border-b mb-4 pb-4;
+
+      & > a {
+        @apply flex justify-between items-center;
+      }
+
+      &:last-child {
+        @apply border-b-0 mb-0 pb-0;
+      }
+
+      &.menu-item-has-children {
+        .open-sub-menu {
+          @apply px-4 transition-transform;
+
+          &.open {
+            @apply rotate-180;
+          }
+        }
+
+        & > ul {
+          @apply pl-4 hidden mt-4;
+          animation: 200ms ease-in-out poneSubMenuFadeInLeft;
+
+          &.open {
+            @apply block;
+          }
+
+          & > li {
+            @apply border-b mb-4 pb-4;
+
+            & > a {
+              @apply flex justify-between items-center;
+            }
+
+            &:last-child {
+              @apply border-b-0 mb-0 pb-0;
+            }
+
+            & > ul {
+              @apply pl-4 hidden mt-4;
+              animation: 200ms ease-in-out poneSubMenuFadeInLeft;
+
+              &.open {
+                @apply block;
+              }
+
+              & > li {
+                @apply border-b mb-4 pb-4;
+
+                & > a {
+                  @apply flex justify-between items-center;
+                }
+
+                &:last-child {
+                  @apply border-b-0 mb-0 pb-0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes poneSubMenuFadeInUp {
