@@ -22,7 +22,6 @@ jQuery(document).ready(function ($) {
         .first()
         .toggleClass('open');
     } else {
-      console.log('sub-menu-depth-1');
       $(this).toggleClass('open');
       $(this)
         .parent()
