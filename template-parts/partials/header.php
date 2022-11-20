@@ -45,7 +45,7 @@
       </div>
 
       <!-- Mobile Menu -->
-      <div class="lg:hidden" x-data="{open: true}">
+      <div class="lg:hidden" x-data="{open: false}">
         <button class="pone-menu-toggle" x-on:click="open = !open" x-bind:aria-expanded="open" x-bind:aria-label="open ? 'Close Menu' : 'Open Menu'" x-bind:class="open ? 'open' : ''">
           <span class="block w-6 h-1 bg-gray-900 rounded transition-all"></span>
           <span class="block w-6 h-1 bg-gray-900 rounded transition-all mt-1"></span>
