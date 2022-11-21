@@ -41,3 +41,9 @@
       ) );
     }
   }
+
+  // Add theme support for WooCommerce
+  add_action( 'after_theme_setup', 'pone_woocommerce_support' );
+  function pone_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+  }
