@@ -1,0 +1,233 @@
+{
+    "key": "group_6374ddbdeec7f",
+    "title": "Flexible Content",
+    "fields": [
+        {
+            "key": "field_63757e1eb96ea",
+            "label": "Content",
+            "name": "flexible_content",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_6375806273cea": {
+                    "key": "layout_6375806273cea",
+                    "name": "row",
+                    "label": "Rij",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_637580f357b8c",
+                            "label": "Rij opties",
+                            "name": "row_options",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "background-primary": "Actergrond primair"
+                            },
+                            "default_value": [],
+                            "return_format": "value",
+                            "multiple": 1,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_637580754c42d",
+                            "label": "Kolommen",
+                            "name": "columns",
+                            "aria-label": "",
+                            "type": "flexible_content",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layouts": {
+                                "layout_6375807ada4d7": {
+                                    "key": "layout_6375807ada4d7",
+                                    "name": "column",
+                                    "label": "Kolom",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6375ea97629b7",
+                                            "label": "Breedte",
+                                            "name": "width",
+                                            "aria-label": "",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "1": "1",
+                                                "2": "2",
+                                                "3": "3",
+                                                "4": "4",
+                                                "5": "5",
+                                                "6": "6",
+                                                "7": "7",
+                                                "8": "8",
+                                                "9": "9",
+                                                "10": "10",
+                                                "11": "11",
+                                                "12": "12"
+                                            },
+                                            "default_value": false,
+                                            "return_format": "value",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "ui": 1,
+                                            "ajax": 0,
+                                            "placeholder": ""
+                                        },
+                                        {
+                                            "key": "field_6375ea6498d03",
+                                            "label": "Offset",
+                                            "name": "offset",
+                                            "aria-label": "",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": [
+                                                "0",
+                                                "1",
+                                                "2",
+                                                "3",
+                                                "4",
+                                                "5",
+                                                "6",
+                                                "7",
+                                                "8",
+                                                "9",
+                                                "10",
+                                                "11"
+                                            ],
+                                            "default_value": false,
+                                            "return_format": "value",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "ui": 1,
+                                            "ajax": 0,
+                                            "placeholder": ""
+                                        },
+                                        {
+                                            "key": "field_63758217f4936",
+                                            "label": "Blokken",
+                                            "name": "blocks",
+                                            "aria-label": "",
+                                            "type": "flexible_content",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "layouts": {
+                                                "layout_6375821d5993f": {
+                                                    "key": "layout_6375821d5993f",
+                                                    "name": "title",
+                                                    "label": "Titel",
+                                                    "display": "block",
+                                                    "sub_fields": [],
+                                                    "min": "",
+                                                    "max": ""
+                                                },
+                                                "layout_6375ea12dfa2a": {
+                                                    "key": "layout_6375ea12dfa2a",
+                                                    "name": "paragraph",
+                                                    "label": "Tekst",
+                                                    "display": "block",
+                                                    "sub_fields": [],
+                                                    "min": "",
+                                                    "max": ""
+                                                },
+                                                "layout_6375ea1ddfa2b": {
+                                                    "key": "layout_6375ea1ddfa2b",
+                                                    "name": "image",
+                                                    "label": "Foto",
+                                                    "display": "block",
+                                                    "sub_fields": [],
+                                                    "min": "",
+                                                    "max": ""
+                                                }
+                                            },
+                                            "min": "",
+                                            "max": "",
+                                            "button_label": "Blok toevoegen"
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                }
+                            },
+                            "min": "",
+                            "max": 3,
+                            "button_label": "Nieuwe kolom"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Nieuwe rij toevoegen"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion",
+        "comments"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1669028147
+}
