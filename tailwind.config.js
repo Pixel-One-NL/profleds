@@ -1,4 +1,5 @@
 module.exports = {
+  jit: true,
   content: {
     relative: true,
     files: [
@@ -12,6 +13,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#00a8e0',
+        'primary-hover': '#036c8f',
       },
     },
   },

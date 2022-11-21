@@ -4,6 +4,7 @@ import './console-message';
 
 import '../css/tailwind.css';
 import '../scss/menu.scss';
+import '../scss/debug-menu.scss';
 
 window.Alpine = Alpine;
 Alpine.start();
