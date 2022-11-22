@@ -14,7 +14,7 @@
 <?php
     function render_table( $data, $title = '', $col_span = 1 ) {
         ?>
-            <div class="tw-col-span-<?= $col_span; ?>">
+            <div class="max-w-md">
                 <?php if( $title ): ?>
                     <p class="mb-2">
                         <strong><?= $title; ?></strong>
@@ -25,8 +25,8 @@
                         <?php foreach( $data as $key => $value ): ?>
                             <tr>
                                 <?php foreach( $value as $key => $value ): ?>
-                                    <td class="px-2 py-1 border border-gray-200"><strong><?php echo $key; ?></strong></td>
-                                    <td class="px-2 py-1 border border-gray-200"><?php echo $value; ?></td>
+                                    <td class="px-2 py-1 border border-gray-200 text-sm break-all min-w-[6rem]"><strong><?php echo $key; ?></strong></td>
+                                    <td class="px-2 py-1 border border-gray-200 text-sm break-all"><?php echo $value; ?></td>
                                 <?php endforeach; ?>
                             </tr>
                         <?php endforeach; ?>
@@ -53,7 +53,7 @@
 
 
         <!-- Tabs -->
-        <div x-show="show" x-data="activeTab: false"  class="z-50 fixed w-full h-1/3 max-h-96 bottom-0 left-0 right-0 bg-gray-50 border-t">
+        <div x-show="show" class="z-50 fixed w-full h-1/3 max-h-96 bottom-0 left-0 right-0 bg-gray-50 border-t">
             <!-- Header -->
             <header class="border-b px-2 w-full h-6 flex justify-between">
                 <!-- Tab buttons -->
@@ -78,8 +78,8 @@
             </header>
 
             <!-- Tabs -->
-            <div class="mx-4 py-4 debug-menu-tab overflow-y-scroll" x-show="activeTab === 1">
-                <div class="grid grid-cols-4 gap-4">
+            <div class="p-4 debug-menu-tab overflow-y-scroll" x-show="activeTab === 1">
+                <div class="flex flex-wrap gap-4">
                         <?php
                             // PHP and envoirnment info
                             $values = array(
@@ -131,6 +131,34 @@
                             );
 
                             render_table( $values, __( 'WordPress Info', 'pixelone' ), 2 );
+
+                            // Server info
+                            $values = array(
+                                array( __( 'Server software', 'pixelone' ) => $_SERVER['SERVER_SOFTWARE'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server IP', 'pixelone' ) => $_SERVER['SERVER_ADDR'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server name', 'pixelone' ) => $_SERVER['SERVER_NAME'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server protocol', 'pixelone' ) => $_SERVER['SERVER_PROTOCOL'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server port', 'pixelone' ) => $_SERVER['SERVER_PORT'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server admin', 'pixelone' ) => $_SERVER['SERVER_ADMIN'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server signature', 'pixelone' ) => $_SERVER['SERVER_SIGNATURE'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server user agent', 'pixelone' ) => $_SERVER['HTTP_USER_AGENT'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server request method', 'pixelone' ) => $_SERVER['REQUEST_METHOD'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server request time', 'pixelone' ) => $_SERVER['REQUEST_TIME'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server request time float', 'pixelone' ) => $_SERVER['REQUEST_TIME_FLOAT'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server query string', 'pixelone' ) => $_SERVER['QUERY_STRING'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server document root', 'pixelone' ) => $_SERVER['DOCUMENT_ROOT'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server remote address', 'pixelone' ) => $_SERVER['REMOTE_ADDR'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server remote host', 'pixelone' ) => $_SERVER['REMOTE_HOST'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server remote port', 'pixelone' ) => $_SERVER['REMOTE_PORT'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server remote user', 'pixelone' ) => $_SERVER['REMOTE_USER'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server redirect remote user', 'pixelone' ) => $_SERVER['REDIRECT_REMOTE_USER'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server script filename', 'pixelone' ) => $_SERVER['SCRIPT_FILENAME'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server path translated', 'pixelone' ) => $_SERVER['PATH_TRANSLATED'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server script name', 'pixelone' ) => $_SERVER['SCRIPT_NAME'] ?? __( 'Unknown', 'pixelone' ) ),
+                                array( __( 'Server request uri', 'pixelone' ) => $_SERVER['REQUEST_URI'] ?? __( 'Unknown', 'pixelone' ) ),
+                            );
+
+                            render_table( $values, __( 'Server info', 'pixelone' ) );
                         ?>
                 </div>
             </div>
