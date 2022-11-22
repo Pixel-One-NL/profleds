@@ -38,7 +38,7 @@
 ?>
 
 <?php if( WP_ENV === 'development' && is_user_logged_in() ): ?>
-    <div x-data="{show: true, activeTab: 1}">
+    <div x-data="{show: false, activeTab: 1}">
         <!-- Toggle -->
         <div class="items-center justify-center z-40 fixed bottom-0 right-0 m-10">
             <div x-data="{tooltip: false}" class="relative z-40">
@@ -58,16 +58,12 @@
             <header class="border-b px-2 w-full h-6 flex justify-between">
                 <!-- Tab buttons -->
                 <div>
-                    <button class=" px-1 hover:bg-gray-200 mr-2" x-on:click="activeTab = 1" :class="{ 'border-orange-400 border-b' : activeTab == 1  } " >
+                    <button class=" px-1 hover:bg-gray-200 mr-2 text-sm" x-on:click="activeTab = 1" :class="{ 'border-primary border-b-2 font-bold' : activeTab == 1  } " >
                         Server info
                     </button>
 
-                    <button class=" px-1 hover:bg-gray-200 mr-2" x-on:click="activeTab = 2" :class="{' border-orange-400 border-b' : activeTab == 2  } ">
-                        Tab 2
-                    </button>
-
-                    <button class=" px-1 hover:bg-gray-200 mr-2" x-on:click="activeTab = 3" :class="{ 'border-orange-400 border-b' : activeTab == 3  } ">
-                        Tab 3
+                    <button class=" px-1 hover:bg-gray-200 mr-2 text-sm" x-on:click="activeTab = 2" :class="{' border-primary border-b-2 font-bold' : activeTab == 2  } ">
+                        Template / WordPress info
                     </button>
                 </div>
 
@@ -108,30 +104,6 @@
 
                             render_table( $values, __( 'Database info', 'pixelone' ) );
 
-                            // WordPress info
-                            $values = array(
-                                array( __( 'WordPress version', 'pixelone' ) => get_bloginfo( 'version' ) ),
-                                array( __( 'WordPress language', 'pixelone' ) => get_locale() ),
-                                array( __( 'WordPress URL', 'pixelone' ) => get_bloginfo( 'wpurl' ) ),
-                                array( __( 'WordPress home URL', 'pixelone' ) => get_bloginfo( 'url' ) ),
-                                array( __( 'WordPress theme', 'pixelone' ) => get_template() ),
-                                array( __( 'WordPress theme version', 'pixelone' ) => wp_get_theme()->get( 'Version' ) ),
-                                array( __( 'WordPress multisite', 'pixelone' ) => is_multisite() ? __( 'Yes', 'pixelone' ) : __( 'No', 'pixelone' ) ),
-                                array( __( 'WordPress debug mode', 'pixelone' ) => defined( 'WP_DEBUG' ) && WP_DEBUG ? __( 'Yes', 'pixelone' ) : __( 'No', 'pixelone' ) ),
-                                array( __( 'WordPress memory limit', 'pixelone' ) => WP_MEMORY_LIMIT ),
-                                array( __( 'WordPress timezone', 'pixelone' ) => get_option( 'timezone_string' ) ),
-                                array( __( 'WordPress permalink structure', 'pixelone' ) => get_option( 'permalink_structure' ) ),
-                                array( __( 'WordPress registered post types', 'pixelone' ) => implode( ', ', get_post_types() ) ),
-                                array( __( 'WordPress registered taxonomies', 'pixelone' ) => implode( ', ', get_taxonomies() ) ),
-                                array( __( 'WordPress registered widgets', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['wp_widget_factory']->widgets ) ) ),
-                                array( __( 'WordPress registered menus', 'pixelone' ) => implode( ', ', get_registered_nav_menus() ) ),
-                                array( __( 'WordPress registered image sizes', 'pixelone' ) => implode( ', ', get_intermediate_image_sizes() ) ),
-                                array( __( 'WordPress registered sidebars', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['wp_registered_sidebars'] ) ) ),
-                                array( __( 'WordPress registered shortcodes', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['shortcode_tags'] ) ) ),
-                            );
-
-                            render_table( $values, __( 'WordPress Info', 'pixelone' ), 2 );
-
                             // Server info
                             $values = array(
                                 array( __( 'Server software', 'pixelone' ) => $_SERVER['SERVER_SOFTWARE'] ?? __( 'Unknown', 'pixelone' ) ),
@@ -162,12 +134,52 @@
                         ?>
                 </div>
             </div>
-            <div class="container debug-menu-tab overflow-y-scroll" x-show="activeTab === 2" >
-                <div class="row">
+            <div class="p-4 debug-menu-tab overflow-y-scroll" x-show="activeTab === 2" >
+                <div class="flex flex-wrap gap-4">
+                    <?php
+                        // WordPress info
+                        $values = array(
+                            array( __( 'WordPress version', 'pixelone' ) => get_bloginfo( 'version' ) ),
+                            array( __( 'WordPress language', 'pixelone' ) => get_locale() ),
+                            array( __( 'WordPress URL', 'pixelone' ) => get_bloginfo( 'wpurl' ) ),
+                            array( __( 'WordPress home URL', 'pixelone' ) => get_bloginfo( 'url' ) ),
+                            array( __( 'WordPress theme', 'pixelone' ) => get_template() ),
+                            array( __( 'WordPress theme version', 'pixelone' ) => wp_get_theme()->get( 'Version' ) ),
+                            array( __( 'WordPress multisite', 'pixelone' ) => is_multisite() ? __( 'Yes', 'pixelone' ) : __( 'No', 'pixelone' ) ),
+                            array( __( 'WordPress debug mode', 'pixelone' ) => defined( 'WP_DEBUG' ) && WP_DEBUG ? __( 'Yes', 'pixelone' ) : __( 'No', 'pixelone' ) ),
+                            array( __( 'WordPress memory limit', 'pixelone' ) => WP_MEMORY_LIMIT ),
+                            array( __( 'WordPress timezone', 'pixelone' ) => get_option( 'timezone_string' ) ),
+                            array( __( 'WordPress permalink structure', 'pixelone' ) => get_option( 'permalink_structure' ) ),
+                            array( __( 'WordPress registered post types', 'pixelone' ) => implode( ', ', get_post_types() ) ),
+                            array( __( 'WordPress registered taxonomies', 'pixelone' ) => implode( ', ', get_taxonomies() ) ),
+                            array( __( 'WordPress registered widgets', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['wp_widget_factory']->widgets ) ) ),
+                            array( __( 'WordPress registered menus', 'pixelone' ) => implode( ', ', get_registered_nav_menus() ) ),
+                            array( __( 'WordPress registered image sizes', 'pixelone' ) => implode( ', ', get_intermediate_image_sizes() ) ),
+                            array( __( 'WordPress registered sidebars', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['wp_registered_sidebars'] ) ) ),
+                            array( __( 'WordPress registered shortcodes', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['shortcode_tags'] ) ) ),
+                        );
+
+                        render_table( $values, __( 'WordPress Info', 'pixelone' ), 2 );
+
+                        // Theme info
+                        $values = array(
+                            array( __( 'Theme name', 'pixelone' ) => wp_get_theme()->get( 'Name' ) ),
+                            array( __( 'Theme version', 'pixelone' ) => wp_get_theme()->get( 'Version' ) ),
+                            array( __( 'Theme author', 'pixelone' ) => wp_get_theme()->get( 'Author' ) ),
+                            array( __( 'Theme author URI', 'pixelone' ) => wp_get_theme()->get( 'AuthorURI' ) ),
+                            array( __( 'Theme description', 'pixelone' ) => wp_get_theme()->get( 'Description' ) ),
+                            array( __( 'Theme text domain', 'pixelone' ) => wp_get_theme()->get( 'TextDomain' ) ),
+                            array( __( 'Theme domain path', 'pixelone' ) => wp_get_theme()->get( 'DomainPath' ) ),
+                            array( __( 'Theme template', 'pixelone' ) => wp_get_theme()->get( 'Template' ) ),
+                            array( __( 'Theme status', 'pixelone' ) => wp_get_theme()->get( 'Status' ) ),
+                            array( __( 'Theme tags', 'pixelone' ) => implode( ', ', wp_get_theme()->get( 'Tags' ) ) ),
+                            array( __( 'Theme theme root', 'pixelone' ) => wp_get_theme()->get_theme_root() ),
+                            array( __( 'Theme theme root URI', 'pixelone' ) => wp_get_theme()->get_theme_root_uri() ),
+                        );
+
+                        render_table( $values, __( 'Theme Info', 'pixelone' ), 2 );
+                    ?>
                 </div>
-            </div>
-            <div class="container debug-menu-tab overflow-y-scroll" x-show="activeTab === 3" >
-                tab3
             </div>
         </div>
     </div>
