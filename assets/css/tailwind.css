@@ -17,3 +17,51 @@ You would add the following to this file
   @apply text-center;
 }
 */
+
+.tw-col-span-1 {
+  @apply col-span-1;
+}
+
+.tw-col-span-2 {
+  @apply col-span-2;
+}
+
+.tw-col-span-3 {
+  @apply col-span-3;
+}
+
+.tw-col-span-4 {
+  @apply col-span-4;
+}
+
+.tw-col-span-5 {
+  @apply col-span-5;
+}
+
+.tw-col-span-6 {
+  @apply col-span-6;
+}
+
+.tw-col-span-7 {
+  @apply col-span-7;
+}
+
+.tw-col-span-8 {
+  @apply col-span-8;
+}
+
+.tw-col-span-9 {
+  @apply col-span-9;
+}
+
+.tw-col-span-10 {
+  @apply col-span-10;
+}
+
+.tw-col-span-11 {
+  @apply col-span-11;
+}
+
+.tw-col-span-12 {
+  @apply col-span-12;
+}
