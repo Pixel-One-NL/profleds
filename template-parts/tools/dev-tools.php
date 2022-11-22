@@ -26,7 +26,17 @@
                             <tr>
                                 <?php foreach( $value as $key => $value ): ?>
                                     <td class="px-2 py-1 border border-gray-200 text-sm break-all min-w-[6rem]"><strong><?php echo $key; ?></strong></td>
-                                    <td class="px-2 py-1 border border-gray-200 text-sm break-all"><?php echo $value; ?></td>
+                                    <td class="px-2 py-1 border border-gray-200 text-sm break-all">
+                                        <?php if( is_string( $value ) ): ?>
+                                            <?php echo $value; ?>
+                                        <?php elseif( is_array( $value ) ): ?>
+                                            <ul class="list-disc list-inside">
+                                                <?php foreach( $value as $item ): ?>
+                                                    <li><?php echo $item; ?></li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </td>
                                 <?php endforeach; ?>
                             </tr>
                         <?php endforeach; ?>
@@ -150,10 +160,10 @@
                             array( __( 'WordPress memory limit', 'pixelone' ) => WP_MEMORY_LIMIT ),
                             array( __( 'WordPress timezone', 'pixelone' ) => get_option( 'timezone_string' ) ),
                             array( __( 'WordPress permalink structure', 'pixelone' ) => get_option( 'permalink_structure' ) ),
-                            array( __( 'WordPress registered post types', 'pixelone' ) => implode( ', ', get_post_types() ) ),
-                            array( __( 'WordPress registered taxonomies', 'pixelone' ) => implode( ', ', get_taxonomies() ) ),
+                            array( __( 'WordPress registered post types', 'pixelone' ) => get_post_types() ),
+                            array( __( 'WordPress registered taxonomies', 'pixelone' ) => get_taxonomies() ),
                             array( __( 'WordPress registered widgets', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['wp_widget_factory']->widgets ) ) ),
-                            array( __( 'WordPress registered menus', 'pixelone' ) => implode( ', ', get_registered_nav_menus() ) ),
+                            array( __( 'WordPress registered menus', 'pixelone' ) => get_registered_nav_menus() ),
                             array( __( 'WordPress registered image sizes', 'pixelone' ) => implode( ', ', get_intermediate_image_sizes() ) ),
                             array( __( 'WordPress registered sidebars', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['wp_registered_sidebars'] ) ) ),
                             array( __( 'WordPress registered shortcodes', 'pixelone' ) => implode( ', ', array_keys( $GLOBALS['shortcode_tags'] ) ) ),
@@ -178,6 +188,15 @@
                         );
 
                         render_table( $values, __( 'Theme Info', 'pixelone' ), 2 );
+
+                        // Plugins info
+                        $values = array(
+                            array( __( 'Plugins', 'pixelone' ) => array_map( function( $plugin ) {
+                                return $plugin['Name'] . ' ' . $plugin['Version'];
+                            }, get_plugins() ) ),
+                        );
+
+                        render_table( $values, __( 'Plugins Info', 'pixelone' ), 2 );
                     ?>
                 </div>
             </div>
