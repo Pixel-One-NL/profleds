@@ -5,6 +5,7 @@ import './console-message';
 import '../css/tailwind.css';
 import '../scss/menu.scss';
 import '../scss/debug-menu.scss';
+import '../scss/inputs.scss';
 
 window.Alpine = Alpine;
 Alpine.start();
@@ -16,20 +17,10 @@ jQuery(document).ready(function ($) {
 
     if (!$(this).hasClass('sub-menu-depth-1')) {
       $(this).toggleClass('open');
-      $(this)
-        .parent()
-        .parent()
-        .find('.pone-sub-menu')
-        .first()
-        .toggleClass('open');
+      $(this).parent().parent().find('.pone-sub-menu').first().toggleClass('open');
     } else {
       $(this).toggleClass('open');
-      $(this)
-        .parent()
-        .parent()
-        .find('.pone-sub-menu')
-        .last()
-        .toggleClass('open');
+      $(this).parent().parent().find('.pone-sub-menu').last().toggleClass('open');
     }
   });
 });
