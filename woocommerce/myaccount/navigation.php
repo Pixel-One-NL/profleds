@@ -22,11 +22,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_before_account_navigation' );
 ?>
 
-<nav class="woocommerce-MyAccount-navigation">
+<nav class="woocommerce-MyAccount-navigation bg-primary-light rounded-lg py-8 px-10">
+	<h2 class="text-lg font-bold mb-4">
+		<i class="fa-regular fa-user mr-2"></i>
+		<?php echo esc_html( __( 'My account', 'pixelone' ) ); ?>
+	</h2>
+
 	<ul>
 		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>" class="bg-red-500">
-				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
+			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?> mb-2">
+				<a class="transition-transform hover:translate-x-2 block" href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
 			</li>
 		<?php endforeach; ?>
 	</ul>

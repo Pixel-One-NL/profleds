@@ -7,6 +7,10 @@ module.exports = {
       './inc/**/*.php',
       './template-parts/**/*.php',
       './safelist.txt',
+      './woocommerce/**/*.php',
+      './assets/scss/**/*.scss',
+      './assets/css/**/*.css',
+      './assets/js/**/*.js',
     ],
   },
   theme: {
@@ -14,6 +18,7 @@ module.exports = {
       colors: {
         primary: '#3AB23A',
         'primary-hover': '#036c8f',
+        'primary-light': '#9ad69a',
       },
     },
   },
