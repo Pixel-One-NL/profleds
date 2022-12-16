@@ -77,3 +77,11 @@ You would add the following to this file
 .tw-py-8 {
   @apply py-8;
 }
+
+.tw-bg-gray-100 {
+  @apply bg-gray-100;
+}
+
+.tw-ml-2 {
+  @apply ml-2;
+}

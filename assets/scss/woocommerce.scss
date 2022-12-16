@@ -12,4 +12,58 @@
       }
     }
   }
+
+  .woocommerce-Button {
+    background-color: #3ab23a !important;
+    color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    padding: 0.25rem 0.5rem !important;
+    @apply transition-all;
+
+    &:hover {
+      background-color: #2e8a2e !important;
+    }
+  }
+
+  .woocommerce-MyAccount-content {
+    overflow-x: auto;
+
+    .table-auto {
+      .woocommerce-orders-table__cell-order-actions {
+        .woocommerce-button.wp-element-button {
+          background-color: #3ab23a !important;
+          color: #ffffff !important;
+          border-radius: 0.5rem !important;
+          font-weight: 600 !important;
+          padding: 0.25rem 0.5rem !important;
+          @apply transition-all mr-2;
+
+          &:hover {
+            background-color: #2e8a2e !important;
+          }
+
+          &:last-child {
+            margin-right: 0 !important;
+          }
+
+          &.cancel {
+            background-color: #e3342f !important;
+
+            &:hover {
+              background-color: #cc1f1a !important;
+            }
+          }
+
+          &.pay {
+            background-color: #3490dc !important;
+
+            &:hover {
+              background-color: #2779bd !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
