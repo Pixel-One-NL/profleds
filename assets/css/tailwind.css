@@ -65,3 +65,15 @@ You would add the following to this file
 .tw-col-span-12 {
   @apply col-span-12;
 }
+
+.tw-container {
+  @apply container;
+}
+
+.tw-mx-auto {
+  @apply mx-auto;
+}
+
+.tw-py-8 {
+  @apply py-8;
+}
