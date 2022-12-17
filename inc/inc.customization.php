@@ -63,3 +63,9 @@
       'after_title'   => '</h3>',
     ) );
   }
+
+  // Load language files
+  add_action( 'after_setup_theme', 'pone_load_textdomain' );
+  function pone_load_textdomain() {
+    load_theme_textdomain( 'pixelone', get_template_directory() . '/languages' );
+  }
