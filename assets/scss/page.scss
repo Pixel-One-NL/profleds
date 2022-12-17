@@ -1,0 +1,16 @@
+.page-header {
+  @apply py-20;
+  background: radial-gradient(76% 1431.91% at 0% 100%, rgba(58, 178, 58, 0.2) 0%, rgba(253, 255, 253, 0) 100%) #f9f9f9;
+}
+
+.breadcrumbs {
+  @apply text-sm mb-1;
+
+  .breadcrumb_last {
+    @apply text-primary font-bold;
+  }
+}
+
+.container {
+  @apply max-w-5xl px-8;
+}

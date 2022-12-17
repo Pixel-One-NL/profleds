@@ -18,6 +18,7 @@
   add_action( 'after_setup_theme', 'pone_theme_support' );
   function pone_theme_support() {
     add_theme_support( 'custom-logo' );
+    add_theme_support( 'widgets' );
   }
 
   // Register menus
@@ -46,4 +47,19 @@
   add_action( 'after_theme_setup', 'pone_woocommerce_support' );
   function pone_woocommerce_support() {
     add_theme_support( 'woocommerce' );
+  }
+
+  // Add sidebars
+  add_action( 'widgets_init', 'pone_register_sidebars' );
+  function pone_register_sidebars() {
+    // Shop sidebar
+    register_sidebar( array(
+      'name'          => __( 'Shop Sidebar', 'pixelone' ),
+      'id'            => 'shop-sidebar',
+      'description'   => __( 'Add widgets here to appear in your shop sidebar.', 'pixelone' ),
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3 class="widget-title">',
+      'after_title'   => '</h3>',
+    ) );
   }

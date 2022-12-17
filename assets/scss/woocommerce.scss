@@ -66,4 +66,82 @@
       }
     }
   }
+
+  .yith-wcan-filters {
+    .yith-wcan-filter {
+      .filter-title.collapsable {
+        background: radial-gradient(100% 1904.13% at 0% 100%, rgba(58, 178, 58, 0.2) 0%, rgba(58, 178, 58, 0) 100%), #f3f3f3;
+        @apply py-2 px-6 rounded-lg font-bold text-sm mb-2;
+
+        &::after {
+          right: 1rem !important;
+        }
+      }
+
+      .filter-content {
+        @apply ml-4;
+
+        .filter-item {
+          label {
+            @apply inline-flex items-center;
+
+            input {
+              @apply appearance-none rounded-md w-5 h-5 p-0 mr-2 bg-gray-100;
+
+              &:checked {
+                @apply bg-primary-light;
+              }
+            }
+          }
+
+          .term-label {
+            @apply text-sm text-black;
+
+            .item-count {
+              @apply text-gray-300 text-xs;
+            }
+          }
+
+          &.active {
+            .term-label {
+              @apply font-bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .searchandfilter {
+    li {
+      &:first-child {
+        @apply pt-0;
+      }
+
+      &:last-child {
+        @apply pb-0;
+      }
+
+      h4 {
+        background: radial-gradient(100% 1904.13% at 0% 100%, rgba(58, 178, 58, 0.2) 0%, rgba(58, 178, 58, 0) 100%), #f3f3f3;
+        @apply py-3 px-6 rounded-lg font-bold text-sm mb-2;
+      }
+
+      ul {
+        @apply pl-4;
+
+        li {
+          @apply flex items-center text-sm;
+
+          .sf-input-checkbox {
+            @apply appearance-none rounded-md w-5 h-5 p-0 bg-gray-200;
+
+            &:checked {
+              @apply bg-primary-light;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -8,6 +8,7 @@ import '../scss/debug-menu.scss';
 import '../scss/inputs.scss';
 import '../scss/woocommerce.scss';
 import '../scss/wysiwyg.scss';
+import '../scss/page.scss';
 
 window.Alpine = Alpine;
 Alpine.start();
