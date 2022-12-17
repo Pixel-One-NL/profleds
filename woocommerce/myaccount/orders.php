@@ -23,22 +23,22 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 <?php if ( $has_orders ) : ?>
 
-	<table class="table-auto rounded-lg w-full">
+	<table class="table-auto">
 		<thead>
-			<tr class="bg-gray-100">
+			<tr>
 				<?php foreach ( wc_get_account_orders_columns() as $column_id => $column_name ) : ?>
-					<th class="text-sm text-left px-3 py-2 woocommerce-orders-table__header-<?php echo esc_attr( $column_id ); ?>"><span class="nobr"><?php echo esc_html( $column_name ); ?></span></th>
+					<th class="woocommerce-orders-table__header-<?php echo esc_attr( $column_id ); ?>"><span class="nobr"><?php echo esc_html( $column_name ); ?></span></th>
 				<?php endforeach; ?>
 			</tr>
 		</thead>
 
 		<tbody>
 			<?php
-			$i = 0; foreach ( $customer_orders->orders as $customer_order ) { $i++;
+			foreach ( $customer_orders->orders as $customer_order ) {
 				$order      = wc_get_order( $customer_order ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 				$item_count = $order->get_item_count() - $order->get_item_count_refunded();
 				?>
-				<tr class="py-2 woocommerce-orders-table__row--status-<?php echo esc_attr( $order->get_status() ); ?> <?= $i % 2 == 0 ? 'tw-bg-gray-100' : ''; ?>">
+				<tr class="py-2 woocommerce-orders-table__row--status-<?php echo esc_attr( $order->get_status() ); ?>">
 					<?php foreach ( wc_get_account_orders_columns() as $column_id => $column_name ) : ?>
 						<td class="text-sm woocommerce-orders-table__cell-<?php echo esc_attr( $column_id ); ?> px-3 py-2" data-title="<?php echo esc_attr( $column_name ); ?>">
 							<?php if ( has_action( 'woocommerce_my_account_my_orders_column_' . $column_id ) ) : ?>
