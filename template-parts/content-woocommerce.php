@@ -28,10 +28,6 @@
                         <i class="fa-solid fa-times mr-1"></i>
                         <?= __( 'Close filters', 'pixelone' ); ?>
                     </button>
-
-                    <div class="mt-8">
-                        <?php dynamic_sidebar( 'shop-sidebar' ); ?>
-                    </div>
                 </div>
             </div>
         </div>

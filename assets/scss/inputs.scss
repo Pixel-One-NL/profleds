@@ -1,3 +1,9 @@
-input {
+input,
+select,
+textarea {
   @apply bg-gray-100 py-2 px-4 rounded-lg border border-gray-100 focus:outline-none focus:border-primary;
+}
+
+select {
+  @apply w-full;
 }

@@ -67,53 +67,12 @@
     }
   }
 
-  .yith-wcan-filters {
-    .yith-wcan-filter {
-      .filter-title.collapsable {
-        background: radial-gradient(100% 1904.13% at 0% 100%, rgba(58, 178, 58, 0.2) 0%, rgba(58, 178, 58, 0) 100%), #f3f3f3;
-        @apply py-2 px-6 rounded-lg font-bold text-sm mb-2;
-
-        &::after {
-          right: 1rem !important;
-        }
-      }
-
-      .filter-content {
-        @apply ml-4;
-
-        .filter-item {
-          label {
-            @apply inline-flex items-center;
-
-            input {
-              @apply appearance-none rounded-md w-5 h-5 p-0 mr-2 bg-gray-100;
-
-              &:checked {
-                @apply bg-primary-light;
-              }
-            }
-          }
-
-          .term-label {
-            @apply text-sm text-black;
-
-            .item-count {
-              @apply text-gray-300 text-xs;
-            }
-          }
-
-          &.active {
-            .term-label {
-              @apply font-bold;
-            }
-          }
-        }
-      }
-    }
-  }
-
   .searchandfilter {
     li {
+      &.hidden {
+        display: none !important;
+      }
+
       &:first-child {
         @apply pt-0;
       }
@@ -123,12 +82,38 @@
       }
 
       h4 {
-        background: radial-gradient(100% 1904.13% at 0% 100%, rgba(58, 178, 58, 0.2) 0%, rgba(58, 178, 58, 0) 100%), #f3f3f3;
-        @apply py-3 px-6 rounded-lg font-bold text-sm mb-2;
+        // background: radial-gradient(100% 1904.13% at 0% 100%, rgba(58, 178, 58, 0.2) 0%, rgba(58, 178, 58, 0) 100%), #f3f3f3;
+        // @apply py-3 px-6 rounded-lg font-bold text-sm mb-2;
+        @apply font-bold text-sm mb-2 relative border-b cursor-pointer;
+
+        &::after {
+          content: '\f0d7';
+          font-family: 'Font Awesome 5 Free';
+
+          @apply absolute right-0 top-1/2 transform -translate-y-3/4 text-black;
+        }
+      }
+
+      &.closed {
+        h4 {
+          @apply border-b-primary;
+
+          &::after {
+            content: '\f0d8';
+          }
+        }
+
+        & > ul {
+          display: none;
+        }
+
+        & > label {
+          display: none;
+        }
       }
 
       ul {
-        @apply pl-4;
+        @apply pl-4 mt-4;
 
         li {
           @apply flex items-center text-sm;
@@ -141,6 +126,55 @@
             }
           }
         }
+      }
+    }
+
+    .show-more {
+      @apply border-b border-black inline-block;
+
+      button {
+        @apply bg-transparent p-0 text-black font-bold;
+
+        &::after {
+          content: '\f078';
+          font-family: 'Font Awesome 5 Free';
+
+          @apply ml-2 no-underline text-xs;
+        }
+
+        &.open {
+          &::after {
+            content: '\f077';
+          }
+        }
+      }
+    }
+
+    .sf-meta-range {
+      display: grid;
+      grid-template-areas:
+        'min divider max'
+        'slider slider slider';
+      align-items: center;
+      justify-items: center;
+
+      & > label:nth-child(1) {
+        grid-area: min;
+        justify-self: start;
+      }
+
+      & > label:nth-child(3) {
+        grid-area: max;
+        justify-self: end;
+      }
+
+      .sf-range-values-seperator {
+        grid-area: divider;
+      }
+
+      .meta-slider {
+        grid-area: slider;
+        @apply w-full;
       }
     }
   }
@@ -189,6 +223,28 @@
         &:hover {
           @apply bg-gray-200;
         }
+      }
+    }
+  }
+
+  .products {
+    margin-bottom: 0 !important;
+  }
+
+  .pagination {
+    @apply w-full flex justify-center items-center;
+
+    a,
+    span {
+      @apply text-base px-4 py-2;
+
+      &.current {
+        @apply font-bold;
+      }
+
+      &.prev,
+      &.next {
+        @apply text-sm bg-primary leading-none w-8 h-8 inline-flex justify-center items-center text-white rounded-lg px-0;
       }
     }
   }

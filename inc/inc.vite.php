@@ -13,7 +13,7 @@
     define( 'PONE_DIST_PATH', get_template_directory() . '/' . PONE_DIST_DEF );
 
     // Define JS enqueue settings
-    define( 'PONE_JS_DEPENDENCIES', array( 'jquery' ) );
+    define( 'PONE_JS_DEPENDENCIES', array( 'jquery', 'wp-i18n' ) );
     define( 'PONE_JS_VERSION', '1.0.0' );
     define( 'PONE_JS_IN_FOOTER', true );
 
